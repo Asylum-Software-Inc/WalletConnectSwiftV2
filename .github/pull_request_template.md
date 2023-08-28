@@ -1,11 +1,12 @@
 # Description
 
-<!--
-Please include:
-* summary of the changes and the related issue
-* relevant motivation and context
--->
+require 'sinatra'
+require 'json'
 
+post '/payload' do
+  push = JSON.parse(request.body.read)
+  puts "I got some JSON: #{push.inspect}"
+end
 Resolves # (issue)
 
 ## How Has This Been Tested?
